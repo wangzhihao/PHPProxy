@@ -75,7 +75,8 @@
 }
 .menu {
   position: absolute;
-  right: 10px;
+    top: 7px;
+    right: 11px;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -110,6 +111,8 @@
 }
 .menu-active{
   border: 0;
+    top: 13px;
+    right: 12px;
 }
 .menu-active:before {
   transform: rotate(45deg) !important;
