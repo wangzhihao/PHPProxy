@@ -124,10 +124,10 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  var menu = $('.floating-button');
+  var button = $('.floating-button');
   $('#include').hide();
-  menu.on('click', function() {
-    $(this).toggleClass('menu-active');
+  button.on('click', function() {
+    $(button).find('.menu').toggleClass('menu-active');
     $('#include').toggle();
   })
 });
