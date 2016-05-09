@@ -45,7 +45,7 @@ $CONFIG['tmp_dir'] = GLYPE_ROOT . '/tmp/';
 
 # Use GZIP compression when sending pages back to the user. This
 # reduces bandwidth usage but at the cost of increased CPU load.
-$CONFIG['gzip_return'] = false;
+$CONFIG['gzip_return'] = true;
 
 # Warn users before browsing a secure site if on an unsecure
 # connection. This option has no effect if your proxy is on https.
@@ -55,7 +55,7 @@ $CONFIG['ssl_warning'] = false;
 # properly proxied is to override the native javascript functions
 # with our own. However, this may interfere with any other
 # javascript added to the page, such as ad codes.
-$CONFIG['override_javascript'] = false;
+$CONFIG['override_javascript'] = true;
 
 # This option fetches the server load and stops the script serving
 # pages whenever the server load goes over the limit specified. Set
