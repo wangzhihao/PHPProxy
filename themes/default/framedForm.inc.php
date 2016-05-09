@@ -66,8 +66,8 @@
   right: 10px;
   height: 50px;
   width: 50px;
-  border: 0;
   background-color: red;
+    border-radius: 25px;
   z-index: 2000000000;
 }
 .menu {
@@ -78,7 +78,7 @@
   height: 30px;
   cursor: pointer;
   transition: all 0.3s;
-  border-bottom: 4px solid hotpink;
+  border-bottom: 4px solid #e3e3e3;
 }
 
  .menu:before, .menu:after {
@@ -87,7 +87,7 @@
   transition: all 0.3s;
 }
 .menu:before, .menu:after {
-  background-color: hotpink;
+  background-color: #e3e3e3;
   height: 4px;
   width: 30px;
   top: 50%;
@@ -106,6 +106,9 @@
   margin-left: -15px !important;
   margin-top: -2px !important;
 }
+.menu-active{
+  border: 0;
+}
 .menu-active:before {
   transform: rotate(45deg) !important;
 }
@@ -122,8 +125,7 @@ $(document).ready(function(){
   var menu = $('.menu');
   $('#include').hide();
   menu.on('click', function() {
-    var menuNum = $(this).data('menu');
-    $(this).toggleClass('menu-'+ menuNum +'-active');
+    $(this).toggleClass('menu-active');
     $('#include').toggle();
   })
 });
