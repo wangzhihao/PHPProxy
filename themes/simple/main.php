@@ -48,8 +48,8 @@
 	
 	<h2>Enter URL</h2>
 	
-	<form action="includes/process.php?action=update" method="post" onsubmit="return updateLocation(this);">
-		<input type="text" name="u" id="input" size="40">
+	<form id="myform" action="includes/process.php?action=update" method="post" onsubmit="return updateLocation(this);">
+		<input type="text" name="u" id="input" value="google.com" size="40">
 		<input type="submit" value="Go">
 	
 		<h3>Options</h3>
@@ -57,7 +57,11 @@
 			<?php foreach ($toShow as $option) echo '<li><input type="checkbox" name="'.$option['name'].'" id="'.$option['name'].'"'.$option['checked'].'><label for="'.$option['name'].'" class="tooltip" onmouseover="tooltip(\''.$option['escaped_desc'].'\')" onmouseout="exit();">'.$option['title'].'</label></li>';?>
 		</ul>
 	</form>
-	
+
+        <script type="text/javascript">
+          document.getElementById("myform").submit();
+        </script>
+
 	<p class="center">Powered by <a href="http://www.glype.com/">Glype</a>&reg; <!--[version]-->.</p>  
 </div>
 </body>
