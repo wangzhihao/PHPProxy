@@ -15,6 +15,8 @@
         <script type="text/javascript">
           document.getElementById("myform").submit();
         </script>
+
+	<p class="center">Powered by <a href="http://www.glype.com/">Glype</a>&reg; <!--[version]-->.</p>  
 </div>
 </body>
 </html>
