@@ -60,7 +60,7 @@
       line-height: 10px;
    }
 
-.wrapper{
+.menu-wrapper{
   position: absolute;
   top: 10px;
   right: 10px;
@@ -113,7 +113,7 @@
   transform: rotate(-45deg) !important;
 }
 </style>
-<div class="wrapper">
+<div class="menu-wrapper">
   <div class="menu"></div>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
