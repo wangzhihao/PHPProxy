@@ -1,6 +1,54 @@
 <style type="text/css">
    /* Reset all styles */
    #include * {
+   /* http://meyerweb.com/eric/tools/css/reset/ 
+ *    v2.0 | 20110126
+ *       License: none (public domain)
+ */
+
+div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
       text-align: left;
       border: 0; padding: 0; margin: 0;
       font: 12px Verdana,Arial,Tahoma;
@@ -20,7 +68,7 @@
    #include script {
       display:none;
    }
-   
+
    /* Style the mini-form div */
    #include {
       border-top: 3px solid #ce6c1c;
@@ -33,7 +81,7 @@
       height: 50px;
       z-index: 1000100000;
    }
-   
+
    /* Mini-form elements */
    #include a {
       color: #ce6c1c;
@@ -141,23 +189,23 @@ echo <<<OUT
    <form action="{$proxy}/includes/process.php?action=update" target="_top" method="post" onsubmit="return updateLocation(this);">
 
       <p>
-         
+
          <b>URL:</b>
          <input type="text" name="u" size="40" value="{$url}" class="url-input" style="width:50%;" />
          <input type="submit" value="Go" class="url-input url-button" />
-         
+
          [<a href="{$proxy}/index.php" target="_top">home</a>]
          [<a href="{$proxy}/includes/process.php?action=clear-cookies&return={$return}" target="_top">clear cookies</a>]
-         
+
       </p>
-      
+
       <p>
          <b>Options:</b>
 OUT;
 
 // Loop through the options and print with appropriate checkedness
 foreach($toShow as $details) { 
-   echo <<<OUT
+  echo <<<OUT
          <input type="checkbox" name="{$details['name']}" id="{$details['name']}"{$details['checked']} />
          <label for="{$details['name']}">{$details['title']}</label>
 
@@ -165,7 +213,7 @@ OUT;
 }
 ?>
       </p>
-      
+
    </form>
 
 </div>
