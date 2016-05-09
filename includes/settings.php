@@ -33,7 +33,7 @@ $CONFIG['enable_blockscript'] = false;
 
 # Theme/skin to use. This should be the name of the appropriate
 # folder inside the /themes/ folder.
-$CONFIG['theme'] = 'simple';
+$CONFIG['theme'] = 'google';
 
 # Run plugins on these websites
 $CONFIG['plugins'] = 'dailymotion.com,youmaker.com,youtube.com,myspacecdn.com,google.com,msn.com,myspace.com,live.com,xhamster.com,fbcdn.net,hotmail.com,facebook.com,yahoo.com,twitter.com';
