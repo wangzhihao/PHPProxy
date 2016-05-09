@@ -128,13 +128,15 @@
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-var menu = $('.menu-4');
-$('#include').hide();
-menu.on('click', function() {
-  var menuNum = $(this).data('menu');
-  $(this).toggleClass('menu-'+ menuNum +'-active');
-  $('#include').toggle();
-})
+$(document).ready(function(){
+  var menu = $('.menu-4');
+  $('#include').hide();
+  menu.on('click', function() {
+    var menuNum = $(this).data('menu');
+    $(this).toggleClass('menu-'+ menuNum +'-active');
+    $('#include').toggle();
+  })
+});
 
 </script>
 <div id="include">
