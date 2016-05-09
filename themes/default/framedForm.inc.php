@@ -60,26 +60,23 @@
       line-height: 10px;
    }
 
-.menu-1, .menu-2,
-.menu-3, .menu-4 {
-  position: relative;
+.menu-4 {
+  position: absolute;
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin: 50px;
   cursor: pointer;
   transition: all 0.3s;
 }
-.menu-1:before, .menu-1:after, .menu-2:before, .menu-2:after,
-.menu-3:before,
-.menu-3:after, .menu-4:before, .menu-4:after {
+ .menu-4:before, .menu-4:after {
   content: "";
   position: absolute;
   transition: all 0.3s;
 }
 
 .menu-4 {
-  top: -10px;
+  top: 10px;
+  right: 10px;
   width: 30px;
   height: 30px;
   border-bottom: 4px solid #e3e3e3;
@@ -124,126 +121,9 @@
 .menu-4-active:after {
   transform: rotate(-45deg) !important;
 }
-
-.menu-3 {
-  background-color: #e3e3e3;
-  width: 50px;
-  height: 50px;
-}
-.menu-3:hover {
-  background-color: orange;
-}
-.menu-3:before, .menu-3:after {
-  background-color: #212121;
-  height: 4px;
-  width: 30px;
-  top: 50%;
-  left: 50%;
-  margin-left: -15px;
-}
-.menu-3:before {
-  margin-top: -6px;
-}
-.menu-3:after {
-  margin-top: 4px;
-}
-
-.menu-3-active {
-  border-radius: 40px;
-  background-color: red !important;
-}
-.menu-3-active:before, .menu-3-active:after {
-  background-color: #e3e3e3;
-  margin-left: -15px !important;
-  margin-top: -2px !important;
-}
-.menu-3-active:before {
-  transform: rotate(45deg) !important;
-}
-.menu-3-active:after {
-  transform: rotate(-45deg) !important;
-}
-
-.menu-2 {
-  border: 4px solid #e3e3e3;
-}
-.menu-2:hover {
-  border-color: aqua;
-}
-.menu-2:before, .menu-2:after {
-  background-color: #e3e3e3;
-  height: 4px;
-  width: 30px;
-  top: 50%;
-  left: 50%;
-  margin-left: -15px;
-}
-.menu-2:before {
-  margin-top: -6px;
-}
-.menu-2:after {
-  margin-top: 4px;
-}
-
-.menu-2-active {
-  transform: rotate(45deg);
-  border-color: red !important;
-  background-color: red !important;
-}
-.menu-2-active:before, .menu-2-active:after {
-  margin-left: -15px !important;
-  margin-top: -2px !important;
-}
-.menu-2-active:after {
-  transform: rotate(-90deg) !important;
-}
-
-.menu-1 {
-  border: 4px solid #e3e3e3;
-  border-radius: 50px;
-}
-.menu-1:hover {
-  border-color: limegreen;
-  background-color: limegreen;
-}
-.menu-1:before, .menu-1:after {
-  width: 60px;
-  height: 4px;
-  background-color: #e3e3e3;
-  left: 50%;
-  margin-left: -30px;
-}
-.menu-1:before {
-  top: 50%;
-  margin-top: -8px;
-}
-.menu-1:after {
-  top: 50%;
-  margin-top: 4px;
-}
-
-.menu-1-active {
-  background-color: red !important;
-  border-color: red !important;
-}
-.menu-1-active:before, .menu-1-active:after {
-  margin-top: -2px;
-}
-.menu-1-active:before {
-  transform: rotate(45deg);
-}
-.menu-1-active:after {
-  transform: rotate(-45deg);
-}
-
-
 </style>
-<div class="wrapper">
-  <!-- <div class="menu-1" data-menu="1"></div>
-  <div class="menu-2" data-menu="2"></div>
-  <div class="menu-3" data-menu="3"></div> -->
+
   <div class="menu-4" data-menu="4"></div>
-</div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
