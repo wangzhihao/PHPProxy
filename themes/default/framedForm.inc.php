@@ -60,76 +60,66 @@
       line-height: 10px;
    }
 
-.menu-4 {
+.wrapper{
   position: absolute;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  transition: all 0.3s;
+  top: 10px;
+  right: 10px;
+  height: 50px;
+  width: 50px;
+  border: 0;
+  background-color: red;
+  z-index: 2000000000;
 }
- .menu-4:before, .menu-4:after {
-  content: "";
+.menu {
   position: absolute;
-  transition: all 0.3s;
-}
-
-.menu-4 {
   top: 10px;
   right: 10px;
   width: 30px;
   height: 30px;
-  border-bottom: 4px solid #e3e3e3;
-  z-index: 2000000000;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 4px solid hotpink;
 }
-.menu-4:hover {
-  border-bottom-color: hotpink;
+
+ .menu:before, .menu:after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s;
 }
-.menu-4:hover:before, .menu-4:hover:after {
+.menu:before, .menu:after {
   background-color: hotpink;
-}
-.menu-4:before, .menu-4:after {
-  background-color: #e3e3e3;
   height: 4px;
   width: 30px;
   top: 50%;
   left: 50%;
   margin-left: -15px;
 }
-.menu-4:before {
+.menu:before {
   margin-top: -10px;
 }
-.menu-4:after {
+.menu:after {
   margin-top: 3px;
 }
 
-.menu-4-active {
-  top: 0;
-  margin-left: 38px;
-  height: 50px;
-  width: 50px;
-  border: 0;
-  background-color: red;
-}
-.menu-4-active:before, .menu-4-active:after {
+.menu-active:before, .menu-active:after {
   background-color: #e3e3e3 !important;
   margin-left: -15px !important;
   margin-top: -2px !important;
 }
-.menu-4-active:before {
+.menu-active:before {
   transform: rotate(45deg) !important;
 }
-.menu-4-active:after {
+.menu-active:after {
   transform: rotate(-45deg) !important;
 }
 </style>
-
-  <div class="menu-4" data-menu="4"></div>
-
+<div class="wrapper">
+  <div class="menu"></div>
+</div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  var menu = $('.menu-4');
+  var menu = $('.menu');
   $('#include').hide();
   menu.on('click', function() {
     var menuNum = $(this).data('menu');
