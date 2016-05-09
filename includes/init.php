@@ -15,7 +15,7 @@
 
 # Choose error reporting levels
 error_reporting(E_ALL);
-ini_set('display_errors', 0); # Always report but don't display on live installation
+ini_set('display_errors', 1); # Always report but don't display on live installation
 
 # Script name (change this if you rename browse.php)
 define('SCRIPT_NAME', 'browse.php');
