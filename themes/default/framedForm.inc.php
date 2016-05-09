@@ -136,7 +136,7 @@ $(document).ready(function(){
 });
 
 </script>
-<div id="include">
+<div id="include" style="display: none;">
 <?php
 // Print form using variables (saves repeatedly opening/closing PHP tags)
 // Edit as if normal HTML but escape any dollar signs
