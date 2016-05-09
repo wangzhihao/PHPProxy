@@ -387,7 +387,7 @@ function parseJS(js,debug) {
 		}
 
 		// And end position
-		var end = analyze_js(match, start, true);
+		var end = analyze_js(match, start);
 
 		// Determine the wrapper to use. First clear any whitespace.
 		type = type.replace(/\s/g, '');
