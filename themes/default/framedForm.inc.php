@@ -58,7 +58,7 @@
       line-height: 10px;
    }
 
-.menu-wrapper{
+.floating-button{
   width: 55px; 
   height: 55px;
   border-radius: 50%;
@@ -118,13 +118,13 @@
   transform: rotate(-45deg) !important;
 }
 </style>
-<div class="menu-wrapper">
+<div class="floating-button">
   <div class="menu"></div>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  var menu = $('.menu');
+  var menu = $('.floating-button');
   $('#include').hide();
   menu.on('click', function() {
     $(this).toggleClass('menu-active');
