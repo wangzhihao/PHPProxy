@@ -271,4 +271,5 @@ $CONFIG['version'] = '1.4.15';
 // Anything below this line will be preserved when the admin control panel rewrites
 // the settings. Useful for storing settings that don't/can't be changed from the control panel
 
-$adminDetails['root'] = '5e9662c96ffb02d0a86586f6e189e53d';
+//Hint: your very common password.
+$adminDetails['root'] = '8bf91b0f43ddf159ed36ad0f50ee3e04';
