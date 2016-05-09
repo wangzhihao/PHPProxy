@@ -1,7 +1,4 @@
 <style type="text/css">
-   /* Make room for the mini-form */
-   html body { margin-top: 60px; }
-   
    /* Reset all styles */
    #include * {
       text-align: left;
