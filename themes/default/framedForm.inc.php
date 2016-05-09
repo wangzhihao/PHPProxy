@@ -67,7 +67,7 @@
   border-radius: 50%;
   background: #db4437;
   position: fixed;
-  bottom: 0;
+  bottom: 30px;
   right: 30px;
   cursor: pointer;
   box-shadow: 0px 2px 5px #666;
@@ -76,7 +76,7 @@
 .menu {
   position: absolute;
     top: 7px;
-    right: 11px;
+    right: 12px;
   width: 30px;
   height: 30px;
   cursor: pointer;
