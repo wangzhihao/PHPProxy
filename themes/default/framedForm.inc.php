@@ -29,8 +29,9 @@
       border-top: 3px solid #ce6c1c;
       border-bottom: 3px solid #ce6c1c;
       background: #0b1933;
-      position: absolute;
-      top:0; left:0;
+      position: fixed;
+      bottom:0;
+      left:0;
       width: 100%;
       height: 50px;
       z-index: 1000100000;
@@ -61,18 +62,19 @@
    }
 
 .menu-wrapper{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  height: 50px;
-  width: 50px;
-  background-color: red;
-    border-radius: 25px;
+  width: 55px; 
+  height: 55px;
+  border-radius: 50%;
+  background: #db4437;
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px #666;
   z-index: 2000000000;
 }
 .menu {
   position: absolute;
-  top: 10px;
   right: 10px;
   width: 30px;
   height: 30px;
