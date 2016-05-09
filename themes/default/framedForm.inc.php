@@ -80,6 +80,7 @@
   width: 30px;
   height: 30px;
   border-bottom: 4px solid #e3e3e3;
+  z-index: 2000000000;
 }
 .menu-4:hover {
   border-bottom-color: hotpink;
@@ -127,7 +128,7 @@
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-var menu = $('.wrapper div');
+var menu = $('.menu-4');
 
 menu.on('click', function() {
   var menuNum = $(this).data('menu');
