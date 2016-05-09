@@ -60,15 +60,6 @@
       line-height: 10px;
    }
 
-html, body {
-  background-color: #212121;
-}
-
-.wrapper {
-  width: 600px;
-  margin: 50px auto;
-}
-
 .menu-1, .menu-2,
 .menu-3, .menu-4 {
   position: relative;
