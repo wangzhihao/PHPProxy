@@ -1159,16 +1159,24 @@ function analyzeAssign_js($input, $start) {
 
 			# Closing chars - is there a corresponding open char?
 			# Yes = reduce stored count. No = end of statement.
-			case '}':
-				$openObjects	? --$openObjects	 : $end = $i;
-				break;
-			case ')':
-				$openBrackets	? --$openBrackets	 : $end = $i;
-				break;
-			case ']':
-				$openArrays		? --$openArrays	 : $end = $i;
-				break;
-
+                        case '}':
+                                 --$openObjects; 
+                                if ( $openObjects || $openBrackets || $openArrays) {
+                                        break;
+                                }
+                                break;
+                        case ')':
+                                --$openBrackets;
+                                if ( $openObjects || $openBrackets || $openArrays) {
+                                        break;
+                                }
+                                break;
+                        case ']':
+                                --$openArrays;
+                                if ( $openObjects || $openBrackets || $openArrays) {
+                                        break;
+                                }
+                                break;
 			# Commas - tell us which argument it is
 			case ',':
 
