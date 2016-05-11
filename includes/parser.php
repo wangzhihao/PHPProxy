@@ -881,7 +881,7 @@ function str_checkprev($input, $char, $offset, $inverse = false) {
 # for the nth argument, where n = $argPos. The $start position must be just inside
 # the parenthesis of the function call we're interested in.
 function analyze_js($input, $start, $argPos = false) {
-
+        error_log($input, $start, 30);
 	# Add , if looking for an argument position
 	if ( $argPos ) {
 		$currentArg = 1;
@@ -963,15 +963,27 @@ function analyze_js($input, $start, $argPos = false) {
 
 			# Closing chars - is there a corresponding open char?
 			# Yes = reduce stored count. No = end of statement.
-			case '}':
-				$openObjects	? --$openObjects	 : $end = $i;
-				break;
-			case ')':
-				$openBrackets	? --$openBrackets	 : $end = $i;
-				break;
-			case ']':
-				$openArrays		? --$openArrays	 : $end = $i;
-				break;
+                        case '}':
+                                 --$openObjects; 
+                                if ( $openObjects || $openBrackets || $openArrays || $argPos ) {
+                                        break;
+                                }
+                                $end = $i;
+                                break;
+                        case ')':
+                                --$openBrackets;
+                                if ( $openObjects || $openBrackets || $openArrays || $argPos ) {
+                                        break;
+                                }
+                                $end = $i;
+                                break;
+                        case ']':
+                                --$openArrays;
+                                if ( $openObjects || $openBrackets || $openArrays || $argPos ) {
+                                        break;
+                                }
+                                $end = $i;
+                                break;
 
 			# Commas - tell us which argument it is
 			case ',':
