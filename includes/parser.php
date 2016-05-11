@@ -883,9 +883,9 @@ function str_checkprev($input, $char, $offset, $inverse = false) {
 function analyze_js($input, $start, $argPos = false) {
 
 	# Add , if looking for an argument position
-	#if ( $argPos ) {
+	if ( $argPos ) {
 		$currentArg = 1;
-	#}
+	}
 
 	# Loop through the input, stopping only at special chars
 	for ( $i = $start, $length = strlen($input), $end = false, $openObjects = $openBrackets = $openArrays = 0;
@@ -981,19 +981,20 @@ function analyze_js($input, $start, $argPos = false) {
 					break;
 				}
 
-				# End now
-				if ( $currentArg == $argPos ) {
-					$end = $i;
-				}
+                                if ( $argPos ) {
+                                  # End now
+                                  if ( $currentArg == $argPos ) {
+                                          $end = $i;
+                                  }
 
-				# Increase the current argument number
-				++$currentArg;
+                                  # Increase the current argument number
+                                  ++$currentArg;
 
-				# If we're not after the first arg, start now?
-				if ( $currentArg == $argPos ) {
-					$start = $i+1;
-				}
-
+                                  # If we're not after the first arg, start now?
+                                  if ( $currentArg == $argPos ) {
+                                          $start = $i+1;
+                                  }
+                                }
 				break;
 
 		}
