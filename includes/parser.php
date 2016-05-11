@@ -968,21 +968,21 @@ function analyze_js($input, $start, $argPos = false) {
                                 if ( $openObjects || $openBrackets || $openArrays || $argPos ) {
                                         break;
                                 }
-                                $end = $i;
+                                $end = $i + 1;
                                 break;
                         case ')':
                                 --$openBrackets;
                                 if ( $openObjects || $openBrackets || $openArrays || $argPos ) {
                                         break;
                                 }
-                                $end = $i;
+                                $end = $i + 1;
                                 break;
                         case ']':
                                 --$openArrays;
                                 if ( $openObjects || $openBrackets || $openArrays || $argPos ) {
                                         break;
                                 }
-                                $end = $i;
+                                $end = $i + 1;
                                 break;
 
 			# Commas - tell us which argument it is
