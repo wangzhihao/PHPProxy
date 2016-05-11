@@ -492,7 +492,7 @@ class parser {
 				case 'action':
 				case 'locationassignment':
 				case 'innerHTML':
-
+/*
 					# Check our post-char position for = as well (could be equality
 					# test rather than assignment, i.e. == )
 					if ( ! isset($input[$postCharPos]) || $input[$postCharPos] == '=' ) {
@@ -514,7 +514,8 @@ class parser {
 
 					# Move offset up to new position
 					$offset = $endPos + 10;
-
+ */
+                                        ++ $offset;
 					# Go get next match
 					continue 2;
 
