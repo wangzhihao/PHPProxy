@@ -529,7 +529,7 @@ class parser {
 				case 'writeln':
 
 					# Find the end position (the closing ")" for the function call)
-					$endPos = analyze_js($input, $charPos);
+					$endPos = find_right_bracket($input, $charPos) + 1;
 
 					# Insert our additional argument just before that
 					$glStr=',"gl"';
@@ -557,7 +557,7 @@ class parser {
 					}
 
 					# Find the end position (the closing ")" for the function call)
-					$endPos = analyze_js($input, $charPos);
+					$endPos = find_right_bracket($input, $charPos) + 1;
 					$valueLength = $endPos - $postCharPos;
 
 					# Generate our replacement
@@ -588,7 +588,7 @@ class parser {
 					$postCharPos += strlen($tmp[0]);
 
 					# Find the end position (the closing ")" for the function call)
-					$endPos = analyze_js($input, $postCharPos);
+					$endPos = find_right_bracket($input, $postCharPos) + 1;
 					$valueLength = $endPos - $postCharPos;
 
 					# Generate our replacement
@@ -870,6 +870,74 @@ function str_checkprev($input, $char, $offset, $inverse = false) {
 
 }
 
+
+# Analyze javascript and return offset position of right bracket.
+# Default is to find the end of the statement, indicated by:
+#        (3) a closing bracket (object, language construct or function call) for which
+#                 no corresponding opening bracket was detected AFTER the passed offset
+function find_right_bracket($input, $start) {
+        # Loop through the input, stopping only at special chars
+        for ( $i = $start, $length = strlen($input), $end = false, $openObjects = $openBrackets = $openArrays = 0;
+                        $end === false && $i < $length;
+                        ++$i ) {
+                $char = $input[$i];
+                switch ( $char ) {
+                        # Starting string delimiters
+                        case '"':
+                        case "'":
+                                if ( $input[$i-1] == '\\' ) { 
+                                        break;
+                                }
+                                # Skip straight to end of string
+                                # Find the corresponding end delimiter and ensure it's not escaped
+                                while ( ( $i = strpos($input, $char, $i+1) ) && $input[$i-1] == '\\' );
+                                # Check for false, in which case we assume the end is the end of the doc
+                                if ( $i === false ) {
+                                        break 2;
+                                }
+                                break;
+                        # Opening chars (objects, parenthesis and arrays)
+                        case '{':
+                                ++$openObjects;
+                                break;
+                        case '(':
+                                ++$openBrackets;
+                                break;
+                        case '[':
+                                ++$openArrays;
+                                break;
+                        # Closing chars - is there a corresponding open char?
+                        # Yes = reduce stored count. No = end of statement.
+                        case '}':
+                                 --$openObjects; 
+                                if ( $openObjects || $openBrackets || $openArrays) {
+                                        break;
+                                }
+                                $end = $i;
+                                break;
+                        case ')':
+                                --$openBrackets;
+                                if ( $openObjects || $openBrackets || $openArrays) {
+                                        break;
+                                }
+                                $end = $i;
+                                break;
+                        case ']':
+                                --$openArrays;
+                                if ( $openObjects || $openBrackets || $openArrays) {
+                                        break;
+                                }
+                                $end = $i;
+                                break;
+                }
+        }
+        # End not found? Use end of document
+        if ( $end === false ) {
+                $end = $length;
+        }
+        # Return end
+        return $end;
+}
 
 # Analyze javascript and return offset positions.
 # Default is to find the end of the statement, indicated by:
