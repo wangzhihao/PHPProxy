@@ -23,8 +23,8 @@ if (count($adminDetails)===0) {
 
 # Debug mode - stores extra information in the cURL wrapper object and prints it
 # out. It produces an ugly mess but still a quick tool for debugging.
-define('DEBUG_MODE', 0);
-define('CURL_LOG', 0);
+define('DEBUG_MODE', 1);
+define('CURL_LOG', 1);
 
 # Log cURLs activity to file
 # Change filename below if desired. Ensure file exists and is writable.
