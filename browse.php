@@ -1606,7 +1606,7 @@ if ( $fetch->parseType ) {
 		case 'javascript':
 
 			# Run through javascript parser
-			$document = $parser->JS($document);
+			//$document = $parser->JS($document);
 
 			break;
 
