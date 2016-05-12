@@ -205,7 +205,7 @@ $CONFIG['tmp_cleanup_logs'] = 30;
 $CONFIG['options']['encodeURL'] = array(
 	'title'	 => 'Encrypt URL',
 	'desc'	 => 'Encrypts the URL of the page you are viewing so that it does not contain the target site in plaintext.',
-	'default' => true,
+	'default' => false,
 	'force'	 => false
 );
 
